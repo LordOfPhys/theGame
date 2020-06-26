@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">occisor</string>
+    <string name="url_server">http://151.248.125.119</string>
+    <integer name="com_vk_sdk_AppId">7516289</integer>
+</resources>

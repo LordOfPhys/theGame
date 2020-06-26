@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:weightSum="1"
+    android:background="@drawable/main_gradient">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="0.9">
+
+        <EditText
+            android:id="@+id/login_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:gravity="center"
+            android:background="@drawable/main_gradient"
+            android:nextFocusRight="@+id/password_id"
+            android:hint="Login"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"></Space>
+
+        <EditText
+            android:id="@+id/password_id"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789"
+            android:textColor="#000000"
+            android:hint="Password"
+            android:singleLine="true"
+            android:background="@drawable/main_gradient"
+            android:inputType="textPassword"
+            android:nextFocusRight="@+id/email_id"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"></Space>
+
+        <EditText
+            android:id="@+id/email_id"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:background="@drawable/main_gradient"
+            android:digits="abcdefghijklmnopqrstuvwxyz. ABCDEFGHIJKLMNOPQRSTUVWXYZ. @. 0123456789"
+            android:nextFocusRight="@+id/btn_register"
+            android:hint="Email"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"></Space>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:background="@drawable/background_item"
+            android:text="Создать аккаунт"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"></Space>
+
+        <TextView
+            android:id="@+id/register_error_txt"
+            android:layout_width="match_parent"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.1">
+
+        <Button
+            android:id="@+id/btn_reg_2_log"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:background="@drawable/background_item"
+            android:text="Уже есть аккаунт">
+        </Button>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:weightSum="1.0"
+    android:background="@drawable/background_game">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:gravity="center"
+        android:background="@drawable/background_item_white"
+        android:textColor="#ffffff"
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_weight="0.5"
+            android:text="Живых игроков">
+        </TextView>
+
+        <TextView
+            android:id="@+id/room_progress_player_count"
+            android:layout_width="match_parent"
+            android:layout_weight="0.5"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:text="0">
+        </TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="0.2"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            android:weightSum="1"
+            android:background="@drawable/border_for_room"
+            android:textColor="#ffffff"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_weight="0.40"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:text="Расстояние до твоего убийцы">
+            </TextView>
+
+            <TextView
+                android:id="@+id/room_progress_dist_killer"
+                android:layout_width="match_parent"
+                android:layout_weight="0.40"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0">
+            </TextView>
+
+            <TextView
+                android:id="@+id/room_progress_killer_message"
+                android:layout_width="match_parent"
+                android:layout_weight="0.2"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_item_white"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:text="...">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:weightSum="1"
+            android:background="@drawable/border_for_room"
+            android:textColor="#ffffff"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="0.4"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:text="Расстояние до твоей цели">
+            </TextView>
+
+            <TextView
+                android:id="@+id/room_progress_dist_target"
+                android:layout_width="match_parent"
+                android:layout_weight="0.4"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="0">
+            </TextView>
+
+            <TextView
+                android:id="@+id/room_progress_target_message"
+                android:layout_width="match_parent"
+                android:layout_weight="0.2"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_item_white"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:text="...">
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/room_progress_your_message"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:gravity="center"
+            android:background="@drawable/border_for_room"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffdd"
+            android:hint="Напиши что-нибудь">
+        </EditText>
+
+        <Button
+            android:id="@+id/room_progress_btn_message"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_item_white"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:text="Отправить">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/room_progress_btn_kill"
+            android:layout_width="match_parent"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_item_white"
+            android:textColor="#ffffff"
+            android:text="Убить">
+        </Button>
+
+        <Button
+            android:id="@+id/room_progress_btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@drawable/background_item_white"
+            android:textColor="#ffffff"
+            android:text="Сдаться">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_list">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></Space>
+
+    <EditText
+        android:id="@+id/id_new_room_name"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="@drawable/background_item_white"
+        android:textColorHint="#808080"
+        android:hint="Введите название комнаты" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></Space>
+
+    <Button
+        android:id="@+id/btn_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="@drawable/background_item_white"
+        android:text="Создать комнату" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></Space>
+
+    <Button
+        android:id="@+id/btn_back_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="@drawable/background_item_white"
+        android:text="Назад" />
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background_list">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:text="Добро пожаловать в игру Occisor. Цель игры - выжить. Создавайте комнату, либо присоединяйтесь к уже существующей. Для начала игры вам необходимо собрать минимум 5 человек. У каждого есть информация о цели и информация об убийце. Убить можно с расстояния не более 70 метров (кнопка станет активна). Не забывайте, что психологическое воздействие не менее важно, чем отличные навыки в логистике (используйте возможность отправлять сообщения своей цели и своему убийце).">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_rules_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_item_white"
+            android:textColor="#ffffff"
+            android:text="Назад">
+        </Button>
+
+    </LinearLayout>
+</LinearLayout>
