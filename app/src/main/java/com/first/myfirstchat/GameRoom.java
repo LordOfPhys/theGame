@@ -29,6 +29,17 @@ public class GameRoom extends AppCompatActivity {
     public Button btn_start_game;
     public String room_status;
 
+        final String BASE_URL = getString(R.string.url_server);
+        GerringAPI gerritAPI;
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+        gerritAPI = retrofit.create(GerringAPI.class);
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
@@ -113,16 +124,6 @@ public class GameRoom extends AppCompatActivity {
     }
 
     private void TryStartGame(String token) {
-        final String BASE_URL = getString(R.string.url_server);
-        GerringAPI gerritAPI;
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-        gerritAPI = retrofit.create(GerringAPI.class);
         Call<RequestStartGame> call = gerritAPI.tryStartGame(new RequestStartGameBody(token));
         call.enqueue(new Callback<RequestStartGame>() {
             @Override
@@ -135,16 +136,6 @@ public class GameRoom extends AppCompatActivity {
     }
 
     private void ExitRoom(String token) {
-        final String BASE_URL = getString(R.string.url_server);
-        GerringAPI gerritAPI;
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-        gerritAPI = retrofit.create(GerringAPI.class);
         Call<RequestExitRoom> call = gerritAPI.tryExitRoom(new RequestExitRoomBody(token));
         call.enqueue(new Callback<RequestExitRoom>() {
             @Override
@@ -157,16 +148,6 @@ public class GameRoom extends AppCompatActivity {
     }
 
     private void TryToRegRoom(String token, final String room_name) {
-        final String BASE_URL = getString(R.string.url_server);
-        GerringAPI gerritAPI;
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-        gerritAPI = retrofit.create(GerringAPI.class);
         Call<RequestRegRoom> call = gerritAPI.try2RegRoom(new RequestRegRoomBody(token, room_name));
         call.enqueue(new Callback<RequestRegRoom>() {
             @Override
@@ -189,16 +170,6 @@ public class GameRoom extends AppCompatActivity {
     }
 
     private void GetRoomStatus(String room, String token) {
-        final String BASE_URL = getString(R.string.url_server);
-        GerringAPI gerritAPI;
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-        gerritAPI = retrofit.create(GerringAPI.class);
         Call<RequestRoomStatus> call = gerritAPI.getRoomSatus(new RequestRoomStatusBody(room, token));
         call.enqueue(new Callback<RequestRoomStatus>() {
             @Override
@@ -215,18 +186,10 @@ public class GameRoom extends AppCompatActivity {
         });
     }
 
+    private Call<RequestRoomStatusYet> getRoomCall;
+
     private void GetRoomStatusYet(String token) {
-        final String BASE_URL = getString(R.string.url_server);
-        GerringAPI gerritAPI;
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-        gerritAPI = retrofit.create(GerringAPI.class);
-        Call<RequestRoomStatusYet> call = gerritAPI.getRoomSatusYet(new RequestRoomStatusYetBody(token));
+        getRoomCall = gerritAPI.getRoomSatusYet(new RequestRoomStatusYetBody(token));
         call.enqueue(new Callback<RequestRoomStatusYet>() {
             @Override
             public void onResponse(Call<RequestRoomStatusYet> call, Response<RequestRoomStatusYet> response) {
@@ -241,4 +204,12 @@ public class GameRoom extends AppCompatActivity {
             }
         });
     }
+    
+    @Override
+    private void onDestroy() {
+        getRoomCall.cancel()
+        super.onDestroy()
+    }
+
+
 }
